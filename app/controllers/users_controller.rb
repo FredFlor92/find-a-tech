@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
     #New User Action
     def new
+        if session[:current_user_id]
+            redirect_to '/', :notice => "Already logged in"
+        end 
         # @user = User.new
     end 
     #Creates the User Action
