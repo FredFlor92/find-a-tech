@@ -7,12 +7,16 @@ class SessionsController < ApplicationController
         @user = User.find_by(:username => params[:username])
         @user = User.find_by(:email => params[:email])
         if @user
-            session[:current_user_id] = @user.id
+            login(@user)
             redirect_to '/'
         else 
             redirect_to "/login", :notice => "User not found"
         end 
-
+    end
+    
+    def destroy
+        reset_session
+        redirect_to "/"
     end 
 
 end
