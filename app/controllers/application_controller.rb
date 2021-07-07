@@ -7,10 +7,12 @@ class ApplicationController < ActionController::Base
     def home
 
     end 
-end
-private
-    def authentication_required
-        if !logged_in?
-        redirect_to "/login"
-        end 
-    end 
+    
+    private
+        def authentication_required
+            if !logged_in?
+            redirect_to "/login"
+            end 
+        end
+    
+end  

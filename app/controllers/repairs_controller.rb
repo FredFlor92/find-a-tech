@@ -19,6 +19,7 @@ class RepairsController < ApplicationController
             raise @repair.errors.inspect
         end 
     end 
+    private 
 
     def repair_params
     end 
